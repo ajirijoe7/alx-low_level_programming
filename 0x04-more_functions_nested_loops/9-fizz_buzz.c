@@ -1,7 +1,5 @@
 #include <stdio.h>
 
-
-
 /**
  * main - program that prints either number
  * or fizz or buzz or fizzBuzz
@@ -24,7 +22,7 @@ int main(void)
 		{
 			printf("Fizz ");
 		}
-		else if ((num % 5) == 0
+		else if ((num % 5) == 0)
 		{
 			if (num != 100)
 			{
