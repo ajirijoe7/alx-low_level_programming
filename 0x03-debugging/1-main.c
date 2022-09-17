@@ -2,6 +2,8 @@
 
 /**
 * main - causes an infinite loop
+* Description: This program comment out the part of the code 
+* 		that causing the output to go into an infinite loop.
 * Return: 0
 */
 
