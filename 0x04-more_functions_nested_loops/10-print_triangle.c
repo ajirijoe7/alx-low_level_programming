@@ -23,13 +23,14 @@ void print_triangle(int size)
 
 			for (inc2 = 0; inc2 < inc1; inc2++)
 			{
-				putchar('#');															}
+				putchar('#');											
+			}
 
 			if (inc1 == size)
 			{
 				continue;
 			}
-			
+
 			putchar('\n');
 		}
 	}
