@@ -3,7 +3,6 @@
 /**
  * main - program that prints either number
  * or fizz or buzz or fizzBuzz
- * 
  *
  * Return: Always 0.
  */
@@ -19,7 +18,7 @@ int main(void)
 
 		else if ((num % 3) == 0)
 			printf("fizz");
-		
+
 		else if ((num % 5) == 0)
 			printf("Buzz");
 
@@ -30,8 +29,8 @@ int main(void)
 			continue;
 		printf(" ");
 	}
-		
-	printf("\n",);
+
+	printf("\n");
 
 	return (0);
 }
