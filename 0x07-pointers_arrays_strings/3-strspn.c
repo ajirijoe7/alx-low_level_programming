@@ -20,7 +20,7 @@ unsigned int _strspn(char *s, char *accept)
 			if (s[i] == accept[j]) /*record & break at first match*/
 			{
 				matches++;
-				breaks;
+				break;
 			}
 			if (accept[j + 1] == '\0' && s[i] != accept[j])
 				return (matches);/*return if idx doesn't match*/
