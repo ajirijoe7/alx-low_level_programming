@@ -9,24 +9,25 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	int i = 0;
-       	int j; 
-	int matches = 0;
+	int i;
+	int j;
+	int k;
 
-	while (*(s + i))
+	for (i = 0; s[i] != 0; i++)
 	{
-
-		for (j = 0; *(accept + j); j++)
+		k = 0;
+		for (j = 0; accept[j] != 0; j++)
 		{
-			if (*(s + i) == *(accept + j))
+			if (s[i] == accept[j])
 			{
-				matches++;
-				break;
+				k = 1;
 			}
-			if (*(accept + j + 1) == '\0' && *(s + i) != *(accept + j))
-				return (matches);/*return if idx doesn't match*/
 		}
-		++;
+		if (k == 0)
+		{
+			break;
+		}
 	}
-	return (matches); /* return num if all match till end */
+	return (i);
 }
+
