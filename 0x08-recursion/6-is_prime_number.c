@@ -8,7 +8,7 @@
  * -1 is returned on error, and errno is set appropriately.
  */
 
-int prime2(int a, int b
+int prime2(int a, int b)
 {
 	if (a == b)
 		return (1);
