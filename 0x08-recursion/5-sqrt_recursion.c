@@ -14,3 +14,14 @@ int _sqrt_recursion(int n)
 
 	return (find_root(n, 0));
 }
+
+/**
+ * _sqrt_recursion - returns the natural square root of n
+ * @n: Number Integer
+ * Return: On success 1 and -1 on error
+ */
+
+int _sqrt_recursion(int n)
+{
+	return (sqrt2(n, 1));
+}
