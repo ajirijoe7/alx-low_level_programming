@@ -29,6 +29,19 @@ int _wcount(char *sw)
 }
 
 /**
+ *_trspace - Moves adress to remove trailig whitespaces
+ * @st: string
+ * Return: Pointer
+ */
+
+char *_trspace(char *st)
+{
+	while (*st == ' ')
+		st++;
+	return (st);
+}
+
+/**
  * strtow - splits a string into words
  *  @str: string
  *
