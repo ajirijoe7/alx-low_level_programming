@@ -95,4 +95,3 @@ size_t print_listint_safe(const listint_t *head)
 
 	return (num_nodes);
 }
-:q 
