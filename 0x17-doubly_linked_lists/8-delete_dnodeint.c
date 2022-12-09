@@ -1,52 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - deletes the node at index of a dlistint_t list.
- * @head: pointer to the list.
- * @index: position of the node to delete.
- * Return: 1 if it succeeded, -1 if it failed.
- **/
+ * delete_dnodeint_at_index - deletes the node at index
+ * @head: pointer to head of doubly linked list
+ * @index: index to look for
+ *
+ * Return: 1 if it succeeded, -1 if it failed
+ */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
-	dlistint_t *aux_node = *head;
-	dlistint_t *node_to_delete = *head;
-	unsigned int idx;
-	unsigned int cont = 0;
+	dlistint_t *tmpcount = *head, *tmp1 = *head, *tmp2, *tmp3;
+	unsigned int count = 0;
 
-	/* border case for empty list */
-	if (!(*head))
+	if (!head || !(*head))
+		return (-1);
+	while (tmpcount)
+		tmpcount = tmpcount->next, count++;
+	if (index > (count - 1))
 		return (-1);
 
-	/* border case for delete at the beginning */
 	if (index == 0)
 	{
-		*head = node_to_delete->next;
-		free(node_to_delete);
+		tmp1 = tmp1->next;
+		free(*head);
+		*head = tmp1;
 		if (*head)
 			(*head)->prev = NULL;
 		return (1);
 	}
 
-	/* search of position to delete */
-	idx = index - 1;
-	while (aux_node && cont != idx)
-	{
-		cont++;
-		aux_node = aux_node->next;
-	}
+	for (count = 0; count < index; count++)
+		tmp2 = tmp1, tmp1 = tmp1->next;
 
-	/* general case */
-	if (cont == idx && aux_node)
-	{
-		node_to_delete = aux_node->next;
-		if (node_to_delete->next)
-		node_to_delete->next->prev = aux_node;
-		aux_node->next = node_to_delete->next;
-		free(node_to_delete);
-		return (1);
-	}
-
-	return (-1);
+	tmp2->next = tmp1->next;
+	tmp3 = tmp1->next;
+	if (tmp3)
+		tmp3->prev = tmp2;
+	free(tmp1);
+	return (1);
 }
-
-
